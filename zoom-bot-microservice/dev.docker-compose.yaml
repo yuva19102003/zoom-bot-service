@@ -1,0 +1,17 @@
+services:
+  zoom-bot-microservice:
+    image: zoom-bot-microservice:latest
+    build: ./
+    volumes:
+     - .:/zoom-bot-microservice
+    networks:
+      - zoom_bot_microservice_network
+    ports:
+      - "8000:8000"
+    #environment:
+
+    #command: 
+
+networks:
+  zoom_bot_microservice_network:
+    driver: bridge
